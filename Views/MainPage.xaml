@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:CanadianHolidays.Model"
+             xmlns:viewmodels="clr-namespace:CanadianHolidays.ViewModels"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="CanadianHolidays.Views.MainPage">
+
+    <ContentPage.BindingContext>
+        <viewmodels:HolidayListViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior EventName="Appearing" Command="{Binding PageAppearingCommand}" />
+    </ContentPage.Behaviors>
+
+    <ScrollView>
+        <StackLayout>
+            <!-- Your existing UI elements here -->
+            <Label Text="2023" FontSize="20" TextColor="Black" HorizontalOptions="CenterAndExpand" Margin="0, 10, 0, 0" />
+
+            <CollectionView ItemsSource="{Binding Holiday}" BackgroundColor="White">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Holiday">
+                        <StackLayout Padding="10" BackgroundColor="#F5F5F5" Margin="10">
+                            <Label Text="{Binding NameEn}" FontSize="18" TextColor="#333333" />
+                            <Label Text="{Binding Date}" FontSize="16" TextColor="#777777" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
