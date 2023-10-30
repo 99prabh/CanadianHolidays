@@ -48,4 +48,31 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="Views\" />
+	  <None Remove="ViewModels\" />
+	  <None Remove="Services\" />
+	  <None Remove="Models\" />
+	  <None Remove="Refractored.MvvmHelpers" />
+	  <None Remove="Microsoft.Toolkit" />
+	  <None Remove="CommunityToolkit.Maui.Markup" />
+	  <None Remove="Microsoft.Maui.Dependencies" />
+	  <None Remove="Newtonsoft.Json" />
+	  <None Remove="CommunityToolkit.Maui.Core" />
+	  <None Remove="CommunityToolkit.Maui" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Views\" />
+	  <Folder Include="ViewModels\" />
+	  <Folder Include="Models\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
+	  <PackageReference Include="Microsoft.Toolkit" Version="7.1.2" />
+	  <PackageReference Include="CommunityToolkit.Maui.Markup" Version="1.2.1" />
+	  <PackageReference Include="Microsoft.Maui.Dependencies" Version="6.0.547" />
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	  <PackageReference Include="CommunityToolkit.Maui.Core" Version="1.4.0" />
+	  <PackageReference Include="CommunityToolkit.Maui" Version="1.4.0" />
+	</ItemGroup>
 </Project>
